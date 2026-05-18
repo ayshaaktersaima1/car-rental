@@ -1,0 +1,27 @@
+import React from 'react';
+import Card from './Card';
+import Link from 'next/link';
+import { Button } from '@heroui/react';
+
+const FeaturedCardSec = async () => {
+    const res = await fetch('http://localhost:5000/cars');
+    const cars = await res.json();
+
+    return (
+        <div className='w-[90%] mx-auto py-15'>
+            <h1 className='text-center text-5xl font-semibold mb-10'>Find Your Perfect Ride</h1>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                {
+                    cars.slice(0, 6).map(car => <Card key={car._id} car={car}></Card>)
+                }
+            </div>
+
+            <div className='flex justify-center my-10'>
+                <Link href={'/all-cars'}><Button className={'bg-red-500 w-60 text-base'}>View All Cars</Button></Link>
+            </div>
+
+        </div>
+    );
+};
+
+export default FeaturedCardSec;

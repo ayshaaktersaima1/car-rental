@@ -3,7 +3,7 @@ import ActiveNavLink from './ActiveNavLink';
 
 const Navbar = () => {
     return (
-        <div className='fixed top-0 w-full backdrop-blur-md bg-black/40 px-[5%] py-8 text-lg font-medium text-white border-b border-b-white/30'>
+        <div className='fixed z-10 top-0 w-full backdrop-blur-md bg-black/40 px-[5%] py-8 text-lg text-white border-b border-b-white/30'>
             <div className='flex justify-between items-center'>
                 <div><ActiveNavLink href={'/'}>Logo</ActiveNavLink></div>
                 <div className='flex gap-9 items-center'>

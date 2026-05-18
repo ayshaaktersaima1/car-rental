@@ -10,7 +10,7 @@ const Banner = () => {
                 <h1 className='text-5xl font-semibold'>Drive Your Journey in Style</h1>
                 <p className='text-lg'>Premium cars, seamless booking, and unforgettable road trips — all in one place. Rent the perfect ride for every destination.</p>
                 <Link href={'/all-cars'}>
-                    <Button className={'text-lg'}>Explore Cars</Button>
+                    <Button className={'text-lg bg-red-500 px-8 py-4'}>Explore Cars</Button>
                 </Link>
             </div>
         </div>
