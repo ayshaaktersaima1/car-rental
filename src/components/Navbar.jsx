@@ -1,7 +1,17 @@
+'use client'
 import React from 'react';
 import ActiveNavLink from './ActiveNavLink';
+import { authClient } from '@/lib/auth-client';
+import Link from 'next/link';
 
 const Navbar = () => {
+
+    const {
+        data: session,
+    } = authClient.useSession()
+
+    const user = session?.user;
+
     return (
         <div className='fixed z-10 top-0 w-full backdrop-blur-md bg-black/40 px-[5%] py-8 text-lg text-white border-b border-b-white/30'>
             <div className='flex justify-between items-center'>
@@ -11,7 +21,11 @@ const Navbar = () => {
                     <div><ActiveNavLink href={'/all-cars'}>Explore Cars</ActiveNavLink></div>
                     <div><ActiveNavLink href={'/add-car'}>add-car</ActiveNavLink></div>
                 </div>
-                <div><ActiveNavLink href={'/login'}>Login</ActiveNavLink></div>
+
+                {
+                    user ? <><div><Link onClick={async () => await authClient.signOut()} href={'/login'}>Logout</Link></div></> : <><div><ActiveNavLink href={'/login'}>Login</ActiveNavLink></div></>
+                }
+
             </div>
         </div>
     );
