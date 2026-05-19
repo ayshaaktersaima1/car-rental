@@ -3,6 +3,8 @@ import React from 'react';
 import ActiveNavLink from './ActiveNavLink';
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
+import { Button } from '@heroui/react';
+import UserProfileOnNav from './UserProfileOnNav';
 
 const Navbar = () => {
 
@@ -11,6 +13,7 @@ const Navbar = () => {
     } = authClient.useSession()
 
     const user = session?.user;
+    console.log(user)
 
     return (
         <div className='fixed z-10 top-0 w-full backdrop-blur-md bg-black/40 px-[5%] py-8 text-lg text-white border-b border-b-white/30'>
@@ -23,7 +26,16 @@ const Navbar = () => {
                 </div>
 
                 {
-                    user ? <><div><Link onClick={async () => await authClient.signOut()} href={'/login'}>Logout</Link></div></> : <><div><ActiveNavLink href={'/login'}>Login</ActiveNavLink></div></>
+                    user ? <><div className='flex items-center gap-4'>
+
+                        <div>
+                            <UserProfileOnNav user={user}></UserProfileOnNav>
+                        </div>
+                    </div></>
+
+
+                        : <><div><Link href={'/login'}>
+                            <Button className={'bg-red-500'}>Login</Button></Link></div></>
                 }
 
             </div>
