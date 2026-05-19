@@ -1,10 +1,28 @@
 "use client";
-import { Check } from "@gravity-ui/icons";
+
+import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 
 
 const Signup = () => {
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+        const user = Object.fromEntries(formData.entries());
+        console.log(user);
+
+        const { data, error } = await authClient.signUp.email({
+            email: user?.email,
+            password: user?.password,
+            name: user?.name,
+            image: user?.photoUrl,
+            callbackURL: "/"
+        })
+
+    }
     return (
         <div>
             <div className="bg-[url('/assets/banner.jpg')] bg-center bg-cover  min-h-screen flex justify-center items-center text-white">
@@ -16,7 +34,7 @@ const Signup = () => {
 
                     {/* form */}
                     <div className="backdrop-blur-lg bg-black/40 px-10 py-20 border border-gray-700 rounded-3xl mt-7 md:mt-22 mb-10 md:mb-0">
-                        <Form className="flex w-full md:w-96 flex-col gap-4 ">
+                        <Form onSubmit={onSubmit} className="flex w-full md:w-96 flex-col gap-4 ">
                             <h1 className="text-3xl font-bold text-center">Create Account</h1>
                             <TextField
                                 isRequired
@@ -77,12 +95,12 @@ const Signup = () => {
                             </TextField>
                             <div className="flex gap-2">
                                 <Button className={'bg-red-500 w-full'} type="submit">
-                                    Login
+                                    Register
                                 </Button>
                             </div>
 
                         </Form>
-                        <p className="text-center mt-3">Already have an account? <span className="text-red-600 font-bold"><Link href={'/login'}>Register</Link></span></p>
+                        <p className="text-center mt-3">Already have an account? <span className="text-red-600 font-bold"><Link href={'/login'}>Login</Link></span></p>
                     </div>
                 </div>
             </div>

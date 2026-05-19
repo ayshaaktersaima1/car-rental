@@ -20,7 +20,7 @@ const Card = ({ car }) => {
                         <div className='flex flex-wrap items-center gap-4 text-gray-600'>
                             <div className='flex items-center justify-center gap-1'>
                                 {
-                                    availability === 'Available' ? <><FaRegCheckCircle className='text-red-500' /></> : <><CgUnavailable className='text-red-500' /></>
+                                    availability == 'Available' ? <><FaRegCheckCircle className='text-red-500' /></> : <><CgUnavailable className='text-red-500' /></>
                                 }
 
                                 <p>{availability}</p>

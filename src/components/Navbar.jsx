@@ -9,6 +9,7 @@ const Navbar = () => {
                 <div className='flex gap-9 items-center'>
                     <div><ActiveNavLink href={'/'}>Home</ActiveNavLink></div>
                     <div><ActiveNavLink href={'/all-cars'}>Explore Cars</ActiveNavLink></div>
+                    <div><ActiveNavLink href={'/add-car'}>add-car</ActiveNavLink></div>
                 </div>
                 <div><ActiveNavLink href={'/login'}>Login</ActiveNavLink></div>
             </div>

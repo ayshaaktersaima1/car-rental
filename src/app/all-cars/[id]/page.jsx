@@ -59,7 +59,7 @@ const Details = async ({ params }) => {
                         <div className='flex justify-between items-center'>
                             <div className='flex items-center gap-3 text-lg'>
                                 {
-                                    availability === 'Available' ? <><FaRegCheckCircle className='text-3xl' /></> : <><CgUnavailable className='text-3xl' /></>
+                                    availability == 'Available' ? <><FaRegCheckCircle className='text-3xl' /></> : <><CgUnavailable className='text-3xl' /></>
                                 }
                                 <h1>Availability</h1>
                             </div>
