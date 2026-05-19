@@ -1,4 +1,5 @@
 "use client";
+import GoogleSignIn from "@/components/GoogleSignIn";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
@@ -37,7 +38,7 @@ const Login = () => {
                     {/* form */}
                     <div className="backdrop-blur-lg bg-black/40 px-10 py-20 border border-gray-700 rounded-3xl mt-7 md:mt-22 mb-10 md:mb-0">
                         <Form onSubmit={onSubmit} className="flex w-full md:w-96 flex-col gap-4 ">
-                            <h1 className="text-3xl font-bold text-center">Create Account</h1>
+                            <h1 className="text-3xl font-bold text-center">Login Here</h1>
 
                             <TextField
                                 isRequired
@@ -79,12 +80,13 @@ const Login = () => {
                                 <FieldError />
                             </TextField>
                             <div className="flex gap-2">
-                                <Button className={'bg-red-500 w-full'} type="submit">
+                                <Button className={'bg-red-500 w-full mb-5'} type="submit">
                                     Login
                                 </Button>
                             </div>
 
                         </Form>
+                        <GoogleSignIn></GoogleSignIn>
                         <p className="text-center mt-3">Dont have an account? <span className="text-red-600 font-bold"><Link href={'/signup'}>Signup</Link></span></p>
                     </div>
                 </div>

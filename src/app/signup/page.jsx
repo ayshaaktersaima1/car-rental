@@ -1,8 +1,10 @@
 "use client";
 
+import GoogleSignIn from "@/components/GoogleSignIn";
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 
 const Signup = () => {
@@ -18,9 +20,16 @@ const Signup = () => {
             email: user?.email,
             password: user?.password,
             name: user?.name,
-            image: user?.photoUrl,
-            callbackURL: "/"
+            image: user?.photoUrl
         })
+        if (error) {
+            alert(error.message)
+        }
+        else {
+            await authClient.signOut();
+            redirect('/login');
+        }
+
 
     }
     return (
@@ -93,14 +102,16 @@ const Signup = () => {
                                 <Description className="text-white">Must be at least 8 characters with 1 uppercase and 1 number</Description>
                                 <FieldError />
                             </TextField>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 mb-5">
                                 <Button className={'bg-red-500 w-full'} type="submit">
                                     Register
                                 </Button>
                             </div>
 
                         </Form>
+                        <GoogleSignIn></GoogleSignIn>
                         <p className="text-center mt-3">Already have an account? <span className="text-red-600 font-bold"><Link href={'/login'}>Login</Link></span></p>
+
                     </div>
                 </div>
             </div>
