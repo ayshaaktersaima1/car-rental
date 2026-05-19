@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { CgUnavailable } from 'react-icons/cg';
+import { FaRegCheckCircle } from 'react-icons/fa';
 import { MdOutlineAirlineSeatReclineNormal, MdOutlineEventAvailable } from 'react-icons/md';
 
 const Card = ({ car }) => {
@@ -19,7 +20,7 @@ const Card = ({ car }) => {
                         <div className='flex flex-wrap items-center gap-4 text-gray-600'>
                             <div className='flex items-center justify-center gap-1'>
                                 {
-                                    availability === 'Available' ? <><MdOutlineEventAvailable className='text-red-500' /></> : <><CgUnavailable className='text-red-500' /></>
+                                    availability === 'Available' ? <><FaRegCheckCircle className='text-red-500' /></> : <><CgUnavailable className='text-red-500' /></>
                                 }
 
                                 <p>{availability}</p>
