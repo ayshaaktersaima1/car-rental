@@ -42,8 +42,7 @@ const BookingCard = ({ booking }) => {
 
                         <div className="flex items-center gap-2">
                             <FaMoneyCheck />
-                            <span className="font-bold">${dailyRentPrice}</span>/Day
-                        </div>
+                            <p><span className="font-bold">${dailyRentPrice}</span>/Day</p></div>
 
                         <div className="flex items-center gap-2">
                             <MdOutlineAirlineSeatReclineNormal />

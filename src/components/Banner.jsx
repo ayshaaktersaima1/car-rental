@@ -4,13 +4,13 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="bg-[url('/assets/banner.jpg')] bg-center bg-cover  h-screen flex justify-center items-center">
-
-            <div className='text-white flex flex-col gap-5 justify-center items-center'>
-                <h1 className='text-5xl font-semibold'>Drive Your Journey in Style</h1>
-                <p className='text-lg'>Premium cars, seamless booking, and unforgettable road trips — all in one place. Rent the perfect ride for every destination.</p>
+        <div className="bg-[url('/assets/banner.jpg')] bg-center bg-cover  h-screen flex justify-center items-center relative">
+            <div className="absolute inset-0 bg-black/50"></div>
+            <div className='relative z-10 text-white flex flex-col gap-5 justify-center items-center'>
+                <h1 className='text-3xl md:text-5xl font-semibold'>Drive Your Journey in Style</h1>
+                <p className='text-base md:text-lg text-center'>Premium cars, seamless booking, and unforgettable road trips — all in one place. Rent the perfect ride for every destination.</p>
                 <Link href={'/all-cars'}>
-                    <Button className={'text-lg bg-red-500 px-8 py-4'}>Explore Cars</Button>
+                    <Button className={'text-base md:text-lg bg-red-500 px-8 py-4'}>Explore Cars</Button>
                 </Link>
             </div>
         </div>

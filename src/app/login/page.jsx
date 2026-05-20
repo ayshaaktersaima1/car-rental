@@ -28,8 +28,9 @@ const Login = () => {
 
     return (
         <div>
-            <div className="bg-[url('/assets/banner.jpg')] bg-center bg-cover  min-h-screen flex justify-center items-center text-white">
-                <div className='flex flex-col md:flex-row w-[95%] md:w-[80%] mx-auto items-center gap-0 justify-between'>
+            <div className="bg-[url('/assets/banner.jpg')] bg-center bg-cover  min-h-screen flex justify-center items-center text-white relative">
+                <div className="absolute inset-0 bg-black/50"></div>
+                <div className='flex flex-col md:flex-row w-[95%] md:w-[80%] mx-auto items-center gap-0 justify-between relative z-10'>
                     <div className="mt-32 md:mt-0 text-center md:text-left">
                         <h1 className='text-3xl md:text-5xl font-semibold mb-5'>Welcome Back to DriveFleet</h1>
                         <p className='text-lg w-auto md:w-170'>Access your bookings, manage your favorite vehicles, and continue your journey with premium car rental experiences designed for comfort and convenience.</p>

@@ -5,6 +5,7 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import { Button } from '@heroui/react';
 import UserProfileOnNav from './UserProfileOnNav';
+import Image from 'next/image';
 
 const Navbar = () => {
 
@@ -16,13 +17,16 @@ const Navbar = () => {
 
 
     return (
-        <div className='fixed z-10 top-0 w-full backdrop-blur-md bg-black/40 px-[5%] py-8 text-lg text-white border-b border-b-white/30'>
+        <div className='fixed z-12 top-0 w-full backdrop-blur-md bg-black/60 px-[5%] py-2 text-base md:text-lg text-white border-b border-b-white/30'>
             <div className='flex justify-between items-center'>
-                <div><ActiveNavLink href={'/'}>Logo</ActiveNavLink></div>
+                <div className='hidden md:flex items-center'>
+                    <Image src={'/assets/logo.png'} alt='DriveFleet' width={150} height={50}
+                        className="h-22 w-auto"></Image>
+
+                </div>
                 <div className='flex gap-9 items-center'>
                     <div><ActiveNavLink href={'/'}>Home</ActiveNavLink></div>
                     <div><ActiveNavLink href={'/all-cars'}>Explore Cars</ActiveNavLink></div>
-                    <div><ActiveNavLink href={'/add-car'}>add-car</ActiveNavLink></div>
                 </div>
 
                 {

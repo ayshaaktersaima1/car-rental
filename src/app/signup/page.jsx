@@ -34,8 +34,9 @@ const Signup = () => {
     }
     return (
         <div>
-            <div className="bg-[url('/assets/banner.jpg')] bg-center bg-cover  min-h-screen flex justify-center items-center text-white">
-                <div className='flex flex-col md:flex-row w-[95%] md:w-[80%] mx-auto items-center gap-0 justify-between'>
+            <div className="bg-[url('/assets/banner.jpg')] bg-center bg-cover  min-h-screen flex justify-center items-center text-white relative py-16">
+                <div className="absolute inset-0 bg-black/50"></div>
+                <div className='flex flex-col md:flex-row w-[95%] md:w-[80%] mx-auto items-center gap-0 justify-between relative z-10'>
                     <div className="mt-32 md:mt-0 text-center md:text-left">
                         <h1 className='text-3xl md:text-5xl font-semibold mb-5'>Create Your DriveFleet Account</h1>
                         <p className='text-lg w-auto md:w-170'>Join DriveFleet to explore premium vehicles, manage bookings effortlessly, and enjoy a seamless car rental experience tailored to every journey.</p>

@@ -37,7 +37,7 @@ const Card = ({ car }) => {
                                 <Button className={'bg-red-500'}>Details</Button>
                             </Link>
                         </div>
-                        <div className='flex flex-col items-center justify-end'>
+                        <div className='flex flex-col items-end justify-end'>
                             <h1 className='text-xl font-bold'>${dailyRentPrice}</h1>
                             <p className='text-gray-600'>/day</p>
                         </div>

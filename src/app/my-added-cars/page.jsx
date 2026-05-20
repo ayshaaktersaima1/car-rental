@@ -16,9 +16,9 @@ const MyAddedCars = async () => {
     const cars = await res.json();
 
     return (
-        <div>
-            <div className=" pt-32 pb-10 w-[90%] mx-auto">
-                <h1 className='text-center text-5xl font-semibold mb-10'>My Added Cars</h1>
+        <div className='bg-[#f2f2f2]'>
+            <div className="pt-20 pb-11 md:pt-40 md:pb-22 w-[90%] mx-auto">
+                <h1 className='text-center text-3xl md:text-5xl mb-7 md:mb-10 font-semibold'>My Added Cars</h1>
                 <div>
                     {
                         cars.map(car => <AddedCarCard key={car._id} car={car}></AddedCarCard>)
