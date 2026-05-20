@@ -85,7 +85,7 @@ const AddedCarCard = ({ car }) => {
 
                     <Card.Footer className="mt-auto p-0 pt-4 flex flex-col sm:flex-row gap-3">
 
-                        <Link href={`/update-car/${_id}`} className="w-full">
+                        <Link href={`/my-added-cars/update-car/${_id}`} className="w-full">
                             <Button className="w-full text-red-500 border-2 border-red-500 bg-transparent">
                                 Update
                             </Button>
