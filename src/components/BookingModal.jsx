@@ -34,7 +34,8 @@ export function BookingModal({ data }) {
             seatCapacity,
             pickupLocation,
             userName: user?.name,
-            userId: user?.id
+            userId: user?.id,
+            bookingDate: new Date().toLocaleDateString("en-GB")
         }
 
         const res = await fetch('http://localhost:5000/bookings', {

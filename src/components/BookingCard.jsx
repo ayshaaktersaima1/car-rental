@@ -6,7 +6,7 @@ import { MdLocationOn, MdOutlineAirlineSeatReclineNormal } from "react-icons/md"
 
 const BookingCard = ({ booking }) => {
 
-    const { _id, driver, note, carName, dailyRentPrice, image, seatCapacity, pickupLocation, userName, userId, carId } = booking;
+    const { _id, driver, note, carName, dailyRentPrice, image, seatCapacity, pickupLocation, userName, userId, carId, bookingDate } = booking;
     return (
         <div>
             <Card className="w-full items-stretch md:flex-row p-4 gap-5 rounded-3xl shadow-lg">
@@ -61,21 +61,33 @@ const BookingCard = ({ booking }) => {
 
                     </div>
 
-                    <Card.Footer className="mt-auto p-0 pt-4 flex justify-between items-center">
-                        <div>
-                            <h1 className="text-sm text-gray-500">
-                                Booked by
-                            </h1>
-                            <h1 className="font-semibold">
-                                {userName}
-                            </h1>
+                    <Card.Footer className="mt-auto p-0 pt-4 flex justify-between items-end">
+                        <div className="space-y-3">
+                            <div>
+                                <h1 className="text-sm text-gray-500">
+                                    Booked by
+                                </h1>
+                                <h1 className="font-semibold">
+                                    {userName}
+                                </h1>
+
+                            </div>
+                            <div>
+                                <h1 className="text-sm text-gray-500">Booking Date:</h1>
+                                <p className="font-semibold">
+                                    {bookingDate}
+                                </p>
+                            </div>
                         </div>
+
 
                         <Link href={`/all-cars/${carId}`}>
                             <Button className="bg-red-500 text-white">
                                 View Details
                             </Button>
                         </Link>
+
+
                     </Card.Footer>
 
                 </div>
