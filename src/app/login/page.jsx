@@ -4,6 +4,7 @@ import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
@@ -13,16 +14,18 @@ const Login = () => {
 
         const formData = new FormData(e.currentTarget);
         const user = Object.fromEntries(formData.entries());
-        console.log(user);
-
         const { data, error } = await authClient.signIn.email({
             email: user?.email,
             password: user?.password,
             callbackURL: "/",
 
-        }, {
-            //callbacks
-        })
+        });
+        if (data) {
+            toast.success("Logged in successfully!");
+        }
+        else {
+            toast.error(error.message);
+        }
 
     }
 

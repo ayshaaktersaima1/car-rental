@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export default function DeleteAlert({ _id, carName }) {
 
@@ -21,7 +22,7 @@ export default function DeleteAlert({ _id, carName }) {
                 authorization: `Bearer ${tokenData?.token}`
             },
         })
-
+        toast.success('Car deleted successfully!');
         router.refresh();
 
 

@@ -5,6 +5,7 @@ import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { toast } from "react-toastify";
 
 
 const Signup = () => {
@@ -23,11 +24,13 @@ const Signup = () => {
             image: user?.photoUrl
         })
         if (error) {
-            alert(error.message)
+            toast.error(error.message)
         }
         else {
             await authClient.signOut();
+            toast.success('Account created successfully!')
             redirect('/login');
+
         }
 
 

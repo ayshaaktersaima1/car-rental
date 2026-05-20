@@ -4,6 +4,7 @@ import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export default function AddCar() {
 
@@ -39,7 +40,8 @@ export default function AddCar() {
             body: JSON.stringify(addedCar)
         })
 
-        router.push('/my-added-cars')
+        toast.success('Car added successfully!');
+        router.push('/my-added-cars');
 
     }
     return (

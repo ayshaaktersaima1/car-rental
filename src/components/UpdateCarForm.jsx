@@ -3,6 +3,7 @@ import { authClient } from '@/lib/auth-client';
 import { Button, Form, Input, Label, TextField } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const UpdateCarForm = ({ car }) => {
     const { _id } = car;
@@ -31,7 +32,8 @@ const UpdateCarForm = ({ car }) => {
 
         })
 
-        router.push('/my-added-cars')
+        toast.success('Car updated successfully');
+        router.push('/my-added-cars');
     }
     return (
         <div>

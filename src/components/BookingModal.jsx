@@ -3,13 +3,15 @@
 import { authClient } from "@/lib/auth-client";
 import { Envelope } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
+import { useRouter } from "next/navigation";
 import { MdOutlineCarRental } from "react-icons/md";
+import { toast } from "react-toastify";
 
 export function BookingModal({ data }) {
 
     const { _id, carName, dailyRentPrice, carType, image, seatCapacity, pickupLocation, description, availability, booking_count } = data;
 
-
+    const router = useRouter();
     const {
         data: session,
     } = authClient.useSession()
@@ -48,8 +50,8 @@ export function BookingModal({ data }) {
             },
             body: JSON.stringify(bookingInfo)
         })
-
-        // console.log(bookingInfo)
+        toast.success('Booking confirmed successfully!');
+        router.push('/my-bookings')
 
     }
 
@@ -73,7 +75,7 @@ export function BookingModal({ data }) {
                         <Modal.Body className="p-6">
                             <Surface variant="default">
                                 <form onSubmit={onSubmit} className="flex flex-col gap-4">
-                                    <TextField className="w-full" name="driver" type="text">
+                                    <TextField className="w-full" name="driver" type="text" isRequired>
                                         <Label>Driver Needed?</Label>
                                         <Input placeholder="Yes/No" />
                                     </TextField>
