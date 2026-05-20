@@ -16,14 +16,14 @@ const Card = ({ car }) => {
                 </div>
                 <div className='bg-[#f2f2f2] px-6 py-10 flex justify-between gap-4 items-center' >
                     <div>
-                        <h1 className='text-xl font-bold mb-2 line-clamp-1'>{carName}</h1>
+                        <h1 className='text-xl font-bold mb-2 line-clamp-1 capitalize'>{carName}</h1>
                         <div className='flex flex-wrap items-center gap-4 text-gray-600'>
                             <div className='flex items-center justify-center gap-1'>
                                 {
                                     availability == 'Available' ? <><FaRegCheckCircle className='text-red-500' /></> : <><CgUnavailable className='text-red-500' /></>
                                 }
 
-                                <p>{availability}</p>
+                                <p className='capitalize'>{availability}</p>
                             </div>
                             <div className='flex items-center justify-center gap-1'>
                                 <MdOutlineAirlineSeatReclineNormal className='text-red-500' />

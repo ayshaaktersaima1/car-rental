@@ -1,16 +1,41 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 
 export default function AddCar() {
 
-    const onSubmit = (e) => {
+    const {
+        data: session,
+    } = authClient.useSession()
+
+    const user = session?.user;
+    const userId = user?.id;
+
+    console.log(user)
+
+    const onSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        const user = Object.fromEntries(formData.entries());
-        console.log(user)
+        const addedCarInfo = Object.fromEntries(formData.entries());
+
+        const { availability, carName, carType, dailyRentPrice, description, image, pickupLocation, seatCapacity } = addedCarInfo;
+
+        const addedCar = {
+            availability, carName, carType, dailyRentPrice, description, image, pickupLocation, seatCapacity,
+            userId
+        }
+        console.log('yours', addedCar)
+
+        const res = await fetch('http://localhost:5000/cars', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addedCar)
+        })
 
     }
     return (

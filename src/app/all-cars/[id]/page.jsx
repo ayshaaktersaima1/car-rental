@@ -21,7 +21,7 @@ const Details = async ({ params }) => {
 
                     <div className='col-span-3 lg:col-span-1 bg-white rounded-3xl shadow-lg p-6 text-lg space-y-6 order-2 lg:order-1'>
                         <div>
-                            <h1 className='text-2xl font-semibold mb-3'>{carName}</h1>
+                            <h1 className='capitalize text-2xl font-semibold mb-3'>{carName}</h1>
                             <hr />
                         </div>
                         <div className='flex gap-3 text-lg text-gray-600'>
@@ -33,7 +33,7 @@ const Details = async ({ params }) => {
                                 <FaCarSide className='text-3xl' />
                                 <h1>Car Type</h1>
                             </div>
-                            <h1>{carType}</h1>
+                            <h1 className='capitalize'>{carType}</h1>
                         </div>
                         <div className='flex justify-between items-center'>
                             <div className='flex items-center gap-3 text-lg'>
@@ -47,7 +47,7 @@ const Details = async ({ params }) => {
                                 <MdLocationOn className='text-3xl' />
                                 <h1>Pickup Location</h1>
                             </div>
-                            <h1>{pickupLocation}</h1>
+                            <h1 className='capitalize'>{pickupLocation}</h1>
                         </div>
                         <div className='flex justify-between items-center'>
                             <div className='flex items-center gap-3 text-lg'>
@@ -63,7 +63,7 @@ const Details = async ({ params }) => {
                                 }
                                 <h1>Availability</h1>
                             </div>
-                            <h1>{availability}</h1>
+                            <h1 className='capitalize'>{availability}</h1>
                         </div>
 
                         <div className='flex justify-between items-center'>

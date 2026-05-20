@@ -13,7 +13,7 @@ const Navbar = () => {
     } = authClient.useSession()
 
     const user = session?.user;
-    console.log(user)
+
 
     return (
         <div className='fixed z-10 top-0 w-full backdrop-blur-md bg-black/40 px-[5%] py-8 text-lg text-white border-b border-b-white/30'>
