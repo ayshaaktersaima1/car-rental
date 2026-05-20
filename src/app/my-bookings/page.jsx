@@ -6,6 +6,10 @@ import { headers } from "next/headers";
 
 const MyBookings = async () => {
 
+    const { token } = await auth.api.getToken({
+        headers: await headers()
+    })
+
     const session = await auth.api.getSession({
         headers: await headers()
     })
@@ -14,7 +18,11 @@ const MyBookings = async () => {
 
 
     const userId = user?.id;
-    const res = await fetch(`http://localhost:5000/bookings/${userId}`);
+    const res = await fetch(`http://localhost:5000/bookings/${userId}`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
 
     const bookings = await res.json();
 

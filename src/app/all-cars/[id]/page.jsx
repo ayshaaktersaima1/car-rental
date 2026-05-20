@@ -1,5 +1,7 @@
 import { BookingModal } from '@/components/BookingModal';
+import { auth } from '@/lib/auth';
 import { Button } from '@heroui/react';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -10,7 +12,15 @@ import { MdLocationOn, MdOutlineAirlineSeatReclineNormal } from 'react-icons/md'
 const Details = async ({ params }) => {
     const { id } = await params;
 
-    const res = await fetch(`http://localhost:5000/cars/${id}`);
+    const { token } = await auth.api.getToken({
+        headers: await headers()
+    })
+
+    const res = await fetch(`http://localhost:5000/cars/${id}`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
     const data = await res.json();
     const { _id, carName, dailyRentPrice, carType, image, seatCapacity, pickupLocation, description, availability, booking_count } = data;
 

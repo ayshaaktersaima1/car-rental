@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { Button, Form, Input, Label, TextField } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
@@ -8,6 +9,8 @@ const UpdateCarForm = ({ car }) => {
 
     const router = useRouter();
 
+
+
     const onSubmit = async (e) => {
 
         e.preventDefault();
@@ -15,11 +18,14 @@ const UpdateCarForm = ({ car }) => {
         const formData = new FormData(e.currentTarget);
         const carInfo = Object.fromEntries(formData.entries());
 
+        const { data: tokenData } = await authClient.token();
+
 
         const res = await fetch(`http://localhost:5000/cars/${_id}`, {
             method: 'PATCH',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(carInfo)
 

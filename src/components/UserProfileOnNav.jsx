@@ -4,11 +4,19 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, Dropdown, Header, Label } from "@heroui/react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
 export default function UserProfileOnNav({ user }) {
     const [selected, setSelected] = useState(new Set(["apple"]));
+
+    const router = useRouter();
+    const handleLogOut = async () => {
+        await authClient.signOut();
+        router.push('/login');
+
+    }
 
     return (
         <Dropdown>
@@ -41,7 +49,7 @@ export default function UserProfileOnNav({ user }) {
                             <Label>My Added Cars</Label>
                         </Dropdown.Item>
                     </Dropdown.Section>
-                    <Dropdown.Item onPress={async () => await authClient.signOut()} id="Logout" textValue="Logout">
+                    <Dropdown.Item onPress={handleLogOut} id="Logout" textValue="Logout">
                         <Dropdown.ItemIndicator />
                         <Label>Logout</Label>
                     </Dropdown.Item>

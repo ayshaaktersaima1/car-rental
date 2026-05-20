@@ -2,6 +2,8 @@ import Card from '@/components/Card';
 import React from 'react';
 
 const AllCars = async () => {
+
+
     const res = await fetch('http://localhost:5000/cars');
     const cars = await res.json();
 

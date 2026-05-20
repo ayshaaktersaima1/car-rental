@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 export default function AddCar() {
 
@@ -13,7 +14,7 @@ export default function AddCar() {
     const user = session?.user;
     const userId = user?.id;
 
-    console.log(user)
+    const router = useRouter();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -27,15 +28,18 @@ export default function AddCar() {
             availability, carName, carType, dailyRentPrice, description, image, pickupLocation, seatCapacity,
             userId
         }
-        console.log('yours', addedCar)
+        const { data: tokenData } = await authClient.token();
 
         const res = await fetch('http://localhost:5000/cars', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(addedCar)
         })
+
+        router.push('/my-added-cars')
 
     }
     return (

@@ -1,12 +1,22 @@
 import UpdateCarForm from '@/components/UpdateCarForm';
+import { auth } from '@/lib/auth';
 import { Button, Form, Input, Label, TextField } from '@heroui/react';
+import { headers } from 'next/headers';
 import React from 'react';
 
 const UpdateCar = async ({ params }) => {
 
     const { id } = await params;
 
-    const carRes = await fetch(`http://localhost:5000/cars/${id}`);
+    const { token } = await auth.api.getToken({
+        headers: await headers()
+    })
+
+    const carRes = await fetch(`http://localhost:5000/cars/${id}`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
     const car = await carRes.json();
 
 
