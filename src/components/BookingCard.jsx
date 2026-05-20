@@ -11,7 +11,7 @@ const BookingCard = ({ booking }) => {
         <div>
             <Card className="w-full items-stretch md:flex-row p-4 gap-5 rounded-3xl shadow-lg">
 
-                {/* Image */}
+
                 <div className="relative h-[250px] md:h-auto md:w-[320px] w-full shrink-0 overflow-hidden rounded-2xl">
                     <Image
                         fill
@@ -21,7 +21,7 @@ const BookingCard = ({ booking }) => {
                     />
                 </div>
 
-                {/* Content */}
+
                 <div className="flex flex-1 flex-col gap-4">
 
                     <Card.Header className="p-0">
@@ -37,7 +37,7 @@ const BookingCard = ({ booking }) => {
                         </div>
                     </Card.Header>
 
-                    {/* Info */}
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm md:text-base">
 
                         <div className="flex items-center gap-2">
