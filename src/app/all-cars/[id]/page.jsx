@@ -74,7 +74,7 @@ const Details = async ({ params }) => {
                             <h1 className='text-2xl font-bold text-red-500'>${dailyRentPrice}<span className='text-lg font-normal'>/Per Day</span></h1>
                         </div>
 
-                        <BookingModal></BookingModal>
+                        <BookingModal data={data}></BookingModal>
 
 
                     </div>

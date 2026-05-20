@@ -5,12 +5,20 @@ import { Button, Description, FieldError, Form, Input, Label, TextField } from "
 
 export default function AddCar() {
 
+    const onSubmit = (e) => {
+        e.preventDefault();
 
+        const formData = new FormData(e.currentTarget);
+        const user = Object.fromEntries(formData.entries());
+        console.log(user)
+
+    }
     return (
         <div>
 
             <div className=" pt-32 pb-10 w-[90%] mx-auto">
-                <Form className="flex w-full rounded-3xl shadow-md flex-col gap-4 bg-[#f2f2f2] p-10">
+                <h1 className='text-center text-5xl font-semibold mb-10'>Add Car</h1>
+                <Form onSubmit={onSubmit} className="flex w-full rounded-3xl shadow-md flex-col gap-4 bg-[#f2f2f2] p-10">
 
 
                     <TextField
