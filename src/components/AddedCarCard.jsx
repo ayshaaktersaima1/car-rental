@@ -4,12 +4,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { CgUnavailable } from 'react-icons/cg';
-import { FaCarSide, FaMoneyCheck, FaRegCheckCircle } from 'react-icons/fa';
+import { FaCar, FaCarSide, FaMoneyCheck, FaRegCheckCircle } from 'react-icons/fa';
 import { MdLocationOn, MdOutlineAirlineSeatReclineNormal } from 'react-icons/md';
 import DeleteAlert from './DeleteAlert';
 
 const AddedCarCard = ({ car }) => {
     const { _id, availability, carName, carType, dailyRentPrice, description, image, pickupLocation, seatCapacity, userId } = car;
+
+    function isValidUrl(string) {
+        try {
+            new URL(string);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    const isValid = isValidUrl(image);
 
 
 
@@ -19,12 +30,20 @@ const AddedCarCard = ({ car }) => {
 
 
                 <div className="relative h-[250px] md:h-auto md:w-[320px] w-full shrink-0 overflow-hidden rounded-2xl">
-                    <Image
-                        fill
-                        src={image}
-                        alt={carName}
-                        className="absolute inset-0 h-full w-full object-cover"
-                    />
+
+
+                    {
+                        isValid ? <> <Image
+                            fill
+                            src={image}
+                            alt={carName}
+                            className="absolute inset-0 h-full w-full object-cover"
+                        /></> :
+                            <><div className='flex justify-center'>
+                                <FaCar size={80} className=" text-red-500" />
+                            </div></>
+                    }
+
                 </div>
 
 

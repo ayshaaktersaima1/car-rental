@@ -3,16 +3,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { CgUnavailable } from 'react-icons/cg';
-import { FaRegCheckCircle } from 'react-icons/fa';
+import { FaCar, FaRegCheckCircle } from 'react-icons/fa';
 import { MdOutlineAirlineSeatReclineNormal, MdOutlineEventAvailable } from 'react-icons/md';
 
 const Card = ({ car }) => {
     const { _id, image, carName, dailyRentPrice, availability, carType, seatCapacity } = car;
+
+    function isValidUrl(string) {
+        try {
+            new URL(string);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    const isValid = isValidUrl(image);
+
     return (
         <div>
             <div className='overflow-hidden rounded-2xl shadow-md hover:-translate-y-3 transition duration-300'>
                 <div className='relative w-full aspect-[4/3]'>
-                    <Image src={image} alt='car photo' fill className='object-cover object-center'></Image>
+                    {
+                        isValid ? <> <Image src={image} alt='car photo' fill className='object-cover object-center'></Image></> :
+                            <><div className='flex justify-center'>
+                                <FaCar size={80} className=" text-red-500" />
+                            </div></>
+                    }
+
                 </div>
                 <div className='bg-[#f2f2f2] px-6 py-10 flex justify-between gap-4 items-center' >
                     <div>

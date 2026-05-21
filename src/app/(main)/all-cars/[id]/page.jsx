@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { CgUnavailable } from 'react-icons/cg';
-import { FaCarSide, FaMoneyCheck, FaRegCalendarCheck, FaRegCheckCircle } from 'react-icons/fa';
+import { FaCar, FaCarSide, FaMoneyCheck, FaRegCalendarCheck, FaRegCheckCircle } from 'react-icons/fa';
 import { MdLocationOn, MdOutlineAirlineSeatReclineNormal } from 'react-icons/md';
 
 const Details = async ({ params }) => {
@@ -23,6 +23,17 @@ const Details = async ({ params }) => {
     });
     const data = await res.json();
     const { _id, carName, dailyRentPrice, carType, image, seatCapacity, pickupLocation, description, availability, booking_count } = data;
+
+    function isValidUrl(string) {
+        try {
+            new URL(string);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    const isValid = isValidUrl(image);
 
     return (
         <div className='bg-[#f2f2f2]'>
@@ -94,7 +105,15 @@ const Details = async ({ params }) => {
 
 
                     <div className='col-span-3 lg:col-span-2 relative w-full h-[90vh] order-1 lg:order-2'>
-                        <Image src={image} alt={carName} fill className='rounded-3xl object-cover'></Image>
+
+                        {
+                            isValid ? <> <Image src={image} alt={carName} fill className='rounded-3xl object-cover'></Image></> :
+                                <><div className='flex justify-center'>
+                                    <FaCar size={80} className=" text-red-500" />
+                                </div></>
+                        }
+
+
                     </div>
                 </div>
             </div>

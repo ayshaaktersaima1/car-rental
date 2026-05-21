@@ -1,24 +1,43 @@
 import { Button, Card, CloseButton } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaCarSide, FaMoneyCheck } from "react-icons/fa";
+import { FaCar, FaCarSide, FaMoneyCheck } from "react-icons/fa";
 import { MdLocationOn, MdOutlineAirlineSeatReclineNormal } from "react-icons/md";
 
 const BookingCard = ({ booking }) => {
 
     const { _id, driver, note, carName, dailyRentPrice, image, seatCapacity, pickupLocation, userName, userId, carId, bookingDate } = booking;
+
+
+    function isValidUrl(string) {
+        try {
+            new URL(string);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    const isValid = isValidUrl(image);
     return (
         <div>
             <Card className="w-full items-stretch md:flex-row p-4 gap-5 rounded-3xl shadow-lg">
 
 
                 <div className="relative h-[250px] md:h-auto md:w-[320px] w-full shrink-0 overflow-hidden rounded-2xl">
-                    <Image
-                        fill
-                        src={image}
-                        alt={carName}
-                        className="absolute inset-0 h-full w-full object-cover"
-                    />
+
+                    {
+                        isValid ? <> <Image
+                            fill
+                            src={image}
+                            alt={carName}
+                            className="absolute inset-0 h-full w-full object-cover"
+                        /></> :
+                            <><div className='flex justify-center'>
+                                <FaCar size={80} className=" text-red-500" />
+                            </div></>
+                    }
+
                 </div>
 
 
