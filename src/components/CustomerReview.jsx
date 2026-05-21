@@ -1,50 +1,112 @@
+import Image from "next/image";
 import React from "react";
+import { FaStar } from "react-icons/fa";
 
 const CustomerReviewSection = () => {
     return (
-        <section className="py-16 px-[5%] bg-gray-50">
-            {/* Heading */}
-            <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold">What Our Customers Say</h2>
-                <p className="text-gray-500 mt-2">
-                    Real feedback from our happy users
+        <section className="w-[90%] mx-auto pb-20 pt-10">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold">
+                    What Our Customers Say
+                </h2>
+                <p className="text-gray-600 mt-3 leading-8 text-lg">
+                    Trusted by hundreds of happy renters across the city.
                 </p>
             </div>
 
-            {/* Reviews Grid */}
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                {/* Review 1 */}
-                <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                    <p className="text-gray-600 mb-4">
-                        “Amazing experience! The booking process was smooth and the car was in perfect condition.”
-                    </p>
-                    <div className="border-t pt-4">
-                        <h4 className="font-semibold">John Doe</h4>
-                        <p className="text-sm text-gray-500">Traveler</p>
+                <div className="bg-[#f2f2f2] rounded-3xl p-6 space-y-5">
+                    <div className="flex items-center gap-4">
+                        <Image
+                            src="https://randomuser.me/api/portraits/men/32.jpg"
+                            alt="customer"
+                            width={55}
+                            height={55}
+                            className="rounded-full object-cover"
+                        />
+
+                        <div>
+                            <h3 className="font-semibold text-lg text-black">
+                                Michael Carter
+                            </h3>
+
+                            <div className="flex items-center gap-1 text-red-500 mt-1">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                        </div>
                     </div>
+
+                    <p className="text-gray-700 leading-7">
+                        Booking with DriveFleet was super smooth. The car was
+                        clean, comfortable, and exactly what I needed for my trip.
+                    </p>
                 </div>
 
-                {/* Review 2 */}
-                <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                    <p className="text-gray-600 mb-4">
-                        “Very reliable service. I use it regularly for my business trips. Highly recommended!”
-                    </p>
-                    <div className="border-t pt-4">
-                        <h4 className="font-semibold">Sarah Khan</h4>
-                        <p className="text-sm text-gray-500">Business Owner</p>
+                <div className="bg-[#f2f2f2] rounded-3xl p-6 space-y-5">
+                    <div className="flex items-center gap-4">
+                        <Image
+                            src="https://randomuser.me/api/portraits/women/44.jpg"
+                            alt="customer"
+                            width={55}
+                            height={55}
+                            className="rounded-full object-cover"
+                        />
+
+                        <div>
+                            <h3 className="font-semibold text-lg text-black">
+                                Sophia Lee
+                            </h3>
+
+                            <div className="flex items-center gap-1 text-red-500 mt-1">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                        </div>
                     </div>
+
+                    <p className="text-gray-700 leading-7">
+                        I loved how easy the booking process was. Great service,
+                        affordable pricing, and friendly support team.
+                    </p>
                 </div>
 
-                {/* Review 3 */}
-                <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                    <p className="text-gray-600 mb-4">
-                        “Great prices and excellent customer support. Will definitely use again.”
-                    </p>
-                    <div className="border-t pt-4">
-                        <h4 className="font-semibold">Michael Lee</h4>
-                        <p className="text-sm text-gray-500">Tourist</p>
+                <div className="bg-[#f2f2f2] rounded-3xl p-6 space-y-5">
+                    <div className="flex items-center gap-4">
+                        <Image
+                            src="https://randomuser.me/api/portraits/men/75.jpg"
+                            alt="customer"
+                            width={55}
+                            height={55}
+                            className="rounded-full object-cover"
+                        />
+
+                        <div>
+                            <h3 className="font-semibold text-lg text-black">
+                                Daniel Brooks
+                            </h3>
+
+                            <div className="flex items-center gap-1 text-red-500 mt-1">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                        </div>
                     </div>
+
+                    <p className="text-gray-700 leading-7">
+                        DriveFleet gave me a premium experience without expensive
+                        prices. Definitely renting again for my next journey.
+                    </p>
                 </div>
 
             </div>
