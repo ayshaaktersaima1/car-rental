@@ -28,11 +28,11 @@ export default function RootLayout({ children }) {
 
 
       <body className="min-h-full flex flex-col">
-        <Navbar></Navbar>
+        {/* <Navbar></Navbar> */}
         <main>
           {children}
         </main>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
         <ToastContainer />
       </body>
 
