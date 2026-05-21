@@ -12,7 +12,7 @@ const UpdateCar = async ({ params }) => {
         headers: await headers()
     })
 
-    const carRes = await fetch(`http://localhost:5000/cars/${id}`, {
+    const carRes = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/cars/${id}`, {
         headers: {
             authorization: `Bearer ${token}`
         }

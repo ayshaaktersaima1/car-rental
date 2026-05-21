@@ -9,14 +9,14 @@ const AllCars = async ({ searchParams }) => {
     const search = params?.search || "";
     const type = params?.type || '';
 
-    const res = await fetch(`http://localhost:5000/cars?search=${search}&type=${type}`,
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/cars?search=${search}&type=${type}`,
         {
             cache: 'no-store'
         }
     );
     const cars = await res.json();
 
-    const allCarsRes = await fetch('http://localhost:5000/cars');
+    const allCarsRes = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/cars`);
     const allCars = await allCarsRes.json();
 
 
@@ -30,11 +30,21 @@ const AllCars = async ({ searchParams }) => {
                 <Filter allCars={allCars}></Filter>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
-                {
-                    cars.map(car => <Card key={car._id} car={car}></Card>)
-                }
-            </div>
+            {
+                cars.length == 0 ? <>
+                    <div className='flex justify-center items-center h-[30vh]'>
+                        <h1 className="text-base md:text-lg">No car found!</h1>
+                    </div>
+                </> : <>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                        {
+                            cars.map(car => <Card key={car._id} car={car}></Card>)
+                        }
+                    </div>
+                </>
+            }
+
+
         </div>
     );
 };
