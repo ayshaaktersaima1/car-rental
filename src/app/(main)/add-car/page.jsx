@@ -29,7 +29,7 @@ export default function AddCar() {
 
         const addedCar = {
             availability, carName, carType: carType.toLowerCase(), dailyRentPrice, description, image, pickupLocation, seatCapacity,
-            userId
+            userId, booking_count: 0
         }
         const { data: tokenData } = await authClient.token();
 

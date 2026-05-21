@@ -29,7 +29,7 @@ const SearchFieldInput = () => {
                     <Label>Search</Label>
                     <SearchField.Group className={'bg-[#f2f2f2] mb-6 rounded-tr-none rounded-br-none'}>
                         <SearchField.SearchIcon />
-                        <SearchField.Input className="w-[280px]" placeholder=" Search by Car Name" value={search}
+                        <SearchField.Input placeholder=" Search by Car Name" value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
                         <SearchField.ClearButton onClick={handleClear} />
