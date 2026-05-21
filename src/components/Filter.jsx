@@ -2,20 +2,25 @@
 
 import { Autocomplete, EmptyState, Label, ListBox, SearchField, useFilter } from "@heroui/react";
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export function Filter() {
+export function Filter({ allCars }) {
+
+    const types = [...new Set(allCars.map((car) => car.carType))];
+    const router = useRouter();
+
     const [selectedKey, setSelectedKey] = useState(null);
     const { contains } = useFilter({ sensitivity: "base" });
 
-    const items = [
-        { id: "florida", name: "Florida" },
-        { id: "delaware", name: "Delaware" },
-        { id: "california", name: "California" },
-        { id: "texas", name: "Texas" },
-        { id: "new-york", name: "New York" },
-        { id: "washington", name: "Washington" },
-    ];
+    const handleChange = (value) => {
+        setSelectedKey(value);
+        if (value) {
+            router.push(`/all-cars?type=${value}`);
+        } else {
+            router.push('/all-cars');
+        }
+    }
 
     return (
         <div className="mb-6">
@@ -24,7 +29,7 @@ export function Filter() {
                 placeholder="Select one"
                 selectionMode="single"
                 value={selectedKey}
-                onChange={setSelectedKey}
+                onChange={handleChange}
             >
                 <Label>State</Label>
                 <Autocomplete.Trigger>
@@ -39,14 +44,14 @@ export function Filter() {
                         <SearchField autoFocus name="search" variant="secondary">
                             <SearchField.Group>
                                 <SearchField.SearchIcon />
-                                <SearchField.Input placeholder="Search states..." />
+                                <SearchField.Input placeholder="Search by car type" />
                                 <SearchField.ClearButton />
                             </SearchField.Group>
                         </SearchField>
                         <ListBox renderEmptyState={() => <EmptyState>No results found</EmptyState>}>
-                            {items.map((item) => (
-                                <ListBox.Item key={item.id} id={item.id} textValue={item.name}>
-                                    {item.name}
+                            {types.map((item, index) => (
+                                <ListBox.Item key={item} id={item} textValue={item}>
+                                    {item}
                                     <ListBox.ItemIndicator />
                                 </ListBox.Item>
                             ))}

@@ -7,13 +7,17 @@ const AllCars = async ({ searchParams }) => {
 
     const params = await searchParams;
     const search = params?.search || "";
+    const type = params?.type || '';
 
-    const res = await fetch(`http://localhost:5000/cars?search=${search}`,
+    const res = await fetch(`http://localhost:5000/cars?search=${search}&type=${type}`,
         {
             cache: 'no-store'
         }
     );
     const cars = await res.json();
+
+    const allCarsRes = await fetch('http://localhost:5000/cars');
+    const allCars = await allCarsRes.json();
 
 
 
@@ -23,7 +27,7 @@ const AllCars = async ({ searchParams }) => {
 
             <div className='flex flex-col md:flex-row items-start gap-2 md:gap-4 '>
                 <SearchFieldInput></SearchFieldInput>
-                <Filter></Filter>
+                <Filter allCars={allCars}></Filter>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>

@@ -23,10 +23,12 @@ export default function AddCar() {
         const formData = new FormData(e.currentTarget);
         const addedCarInfo = Object.fromEntries(formData.entries());
 
+
+
         const { availability, carName, carType, dailyRentPrice, description, image, pickupLocation, seatCapacity } = addedCarInfo;
 
         const addedCar = {
-            availability, carName, carType, dailyRentPrice, description, image, pickupLocation, seatCapacity,
+            availability, carName, carType: carType.toLowerCase(), dailyRentPrice, description, image, pickupLocation, seatCapacity,
             userId
         }
         const { data: tokenData } = await authClient.token();
