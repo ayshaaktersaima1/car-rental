@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+● Website Name: DriveFleet Car Rental Platform
 
-## Getting Started
+● Live URL: https://car-rental-seven-ecru.vercel.app/
 
-First, run the development server:
+● Purpose: This project is a full-stack Car Rental Platform where users can explore available cars, view detailed information, book vehicles, manage bookings, and add their own car listings. It is built to practice Next.js, MongoDB, JWT authentication, protected routes, CRUD operations and responsive modern UI design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+● Key Features:
+(1) Responsive Navbar with active route highlighting and conditional login/logout state.
+(2) User authentication system with Email/Password login, registration, Google login, JWT token and protected private routes.
+(3) Dynamic Available Cars section showing cars from MongoDB database.
+(4) Explore Cars page with search functionality by car name and filter by car type.
+(5) Detailed Car Details page with booking functionality.
+(6) Booking system where users can book cars with driver option and special notes.
+(7) Booking count increases automatically using MongoDB $inc operator after each booking.
+(8) My Bookings page to manage all booked cars by the logged-in user.
+(9) My Added Cars page with update and delete functionality for user-added cars.
+(10) Add Car feature with complete CRUD operations connected to MongoDB.
+(11) User profile dropdown with private navigation options and logout functionality.
+(12) Custom loading spinner, toast notifications and responsive 404 Not Found page.
+(13) Fully responsive design for mobile, tablet and desktop devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -30,7 +30,6 @@ const WhyChooseUs = () => {
 
                         <div className="space-y-12">
 
-
                             <div className="border-b border-gray-300 pb-8">
                                 <div className="flex items-start gap-4">
 
