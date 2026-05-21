@@ -17,11 +17,11 @@ const Navbar = () => {
 
 
     return (
-        <div className='fixed z-12 top-0 w-full backdrop-blur-md bg-black/60 px-[5%] py-2 text-base md:text-lg text-white border-b border-b-white/30'>
+        <div className='fixed z-12 top-0 w-full backdrop-blur-md bg-black/60 px-[5%] py-3 text-base md:text-lg text-white border-b border-b-white/30'>
             <div className='flex justify-between items-center'>
                 <div className='hidden md:flex items-center'>
                     <Image src={'/assets/logo.png'} alt='DriveFleet' width={150} height={50}
-                        className="h-22 w-auto"></Image>
+                        className="h-16 w-auto"></Image>
 
                 </div>
                 <div className='flex gap-9 items-center'>

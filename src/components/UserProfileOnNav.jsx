@@ -6,10 +6,22 @@ import { Button, Dropdown, Header, Label } from "@heroui/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { FaUserAlt } from "react-icons/fa";
 
 
 export default function UserProfileOnNav({ user }) {
     const [selected, setSelected] = useState(new Set(["apple"]));
+
+    function isValidUrl(string) {
+        try {
+            new URL(string);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    const isValid = isValidUrl(user?.image);
 
     const router = useRouter();
     const handleLogOut = async () => {
@@ -22,7 +34,14 @@ export default function UserProfileOnNav({ user }) {
         <Dropdown>
             <Button aria-label="Menu" className="flex items-center gap-3 border text-white border-gray-400 rounded-lg px-4 bg-transparent">
                 <div className="h-10 w-10 shrink-0 rounded-full flex items-center">
-                    <Image src={user?.image} alt="profile pic" height={32} width={32} className="rounded-full"></Image>
+
+                    {
+                        isValid ? <><Image src={user?.image} alt="profile pic" height={32} width={32} className="rounded-full"></Image></> :
+                            <>
+                                <FaUserAlt size={40} />
+                            </>
+                    }
+
                 </div>
                 <div className="flex-1 space-y-2">
                     <h1>{user?.name}</h1>
