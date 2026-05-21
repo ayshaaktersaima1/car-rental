@@ -44,7 +44,12 @@ export default function UserProfileOnNav({ user }) {
 
                 </div>
                 <div className="flex-1 space-y-2">
-                    <h1>{user?.name}</h1>
+                    <h1 className="block md:hidden">
+                        {user?.name?.split(" ")[0]}
+                    </h1>
+                    <h1 className="hidden md:block">
+                        {user?.name}
+                    </h1>
                 </div>
             </Button>
             <Dropdown.Popover className="min-w-[256px] bg-red-500">
