@@ -34,6 +34,7 @@ const Details = async ({ params }) => {
     }
 
     const isValid = isValidUrl(image);
+    const isAvailable = availability?.toLowerCase() === "available";
 
     return (
         <div className='bg-[#f2f2f2]'>
@@ -80,7 +81,7 @@ const Details = async ({ params }) => {
                         <div className='flex justify-between items-center'>
                             <div className='flex items-center gap-3 text-lg'>
                                 {
-                                    availability == 'Available' ? <><FaRegCheckCircle className='text-3xl' /></> : <><CgUnavailable className='text-3xl' /></>
+                                    isAvailable ? <><FaRegCheckCircle className='text-3xl' /></> : <><CgUnavailable className='text-3xl' /></>
                                 }
                                 <h1>Availability</h1>
                             </div>

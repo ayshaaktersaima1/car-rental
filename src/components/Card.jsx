@@ -19,6 +19,8 @@ const Card = ({ car }) => {
     }
 
     const isValid = isValidUrl(image);
+    const isAvailable = availability?.toLowerCase() === "available";
+
 
     return (
         <div>
@@ -39,7 +41,7 @@ const Card = ({ car }) => {
                         <div className='flex flex-wrap items-center gap-4 text-gray-600'>
                             <div className='flex items-center justify-center gap-1'>
                                 {
-                                    availability == 'Available' ? <><FaRegCheckCircle className='text-red-500' /></> : <><CgUnavailable className='text-red-500' /></>
+                                    isAvailable ? <><FaRegCheckCircle className='text-red-500' /></> : <><CgUnavailable className='text-red-500' /></>
                                 }
 
                                 <p className='capitalize'>{availability}</p>
