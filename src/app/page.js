@@ -1,13 +1,11 @@
-import Banner from "@/components/Banner";
-import FeaturedCardSec from "@/components/FeaturedCardSec";
+import Homepage from "@/components/Homepage";
 import Image from "next/image";
 
 export default function Home() {
   return (
 
     <div>
-      <Banner></Banner>
-      <FeaturedCardSec></FeaturedCardSec>
+      <Homepage></Homepage>
     </div>
   );
 }
