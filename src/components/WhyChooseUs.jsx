@@ -15,11 +15,11 @@ const WhyChooseUs = () => {
                 <div className="w-[90%] mx-auto">
                     <div className="text-center max-w-3xl mx-auto">
 
-                        <h2 className="text-3xl md:text-5xl font-bold leading-tight mt-0">
+                        <h2 className="text-3xl md:text-5xl font-semibold leading-tight mt-0">
                             Why DriveFleet Stands Out
                         </h2>
 
-                        <p className="text-gray-600 mt-3 leading-8 text-lg">
+                        <p className="text-gray-600 mt-3 leading-8 text-base md:text-lg">
                             DriveFleet provides reliable, stylish, and comfortable vehicles
                             with flexible rental solutions for business trips, vacations,
                             airport transfers, and daily travel needs.
