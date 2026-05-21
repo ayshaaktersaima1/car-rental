@@ -3,12 +3,18 @@ import React from 'react';
 
 const loading = () => {
     return (
-        <div className='flex justify-center items-center h-[30vw]'>
-            <div className="flex flex-col items-center gap-2">
-                <Spinner className='text-red-500' size="xl" />
-                <span className="text-xs text-muted">loading</span>
+        <div className='w-[90%] mx-auto mt-20 mb-11 md:mt-40 md:mb-22'>
+
+            <div className='flex justify-center items-center h-[30vw]'>
+                <div className="flex flex-col items-center gap-2">
+                    <Spinner className='text-red-500' size="xl" />
+                    <span className="text-xs text-muted">loading</span>
+                </div>
             </div>
         </div>
+
+
+
     );
 };
 
