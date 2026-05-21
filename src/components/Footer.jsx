@@ -25,7 +25,7 @@ const Footer = () => {
 
                 <div>
                     <h1 className="text-xl font-semibold mb-5">
-                        Useful Links
+                        Quick Links
                     </h1>
 
                     <div className="flex flex-col gap-3 text-gray-400">
@@ -34,7 +34,7 @@ const Footer = () => {
                             Home
                         </Link>
 
-                        <Link href="/explore-cars">
+                        <Link href="/all-cars">
                             Explore Cars
                         </Link>
 
