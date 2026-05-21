@@ -39,7 +39,7 @@ const Details = async ({ params }) => {
     return (
         <div className='bg-[#f2f2f2]'>
             <div className='pt-32 pb-10 w-[90%] mx-auto '>
-                <div className='grid grid-cols-3 gap-10 lg:gap-20'>
+                <div className='grid grid-cols-3 gap-4 md:gap-10 lg:gap-20'>
 
                     <div className='col-span-3 lg:col-span-1 bg-white rounded-3xl shadow-lg p-6 text-lg space-y-6 order-2 lg:order-1'>
                         <div>
@@ -105,7 +105,7 @@ const Details = async ({ params }) => {
 
 
 
-                    <div className='col-span-3 lg:col-span-2 relative w-full h-[90vh] order-1 lg:order-2'>
+                    <div className='col-span-3 lg:col-span-2 relative w-full aspect-[4/3] lg:aspect-auto lg:h-[90vh] order-1 lg:order-2'>
 
                         {
                             isValid ? <> <Image src={image} alt={carName} fill className='rounded-3xl object-cover'></Image></> :
