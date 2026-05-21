@@ -25,7 +25,7 @@ const AllCars = async ({ searchParams }) => {
         <div className='w-[90%] mx-auto mt-20 mb-11 md:mt-40 md:mb-22'>
             <h1 className='text-center text-3xl md:text-5xl font-semibold mb-7 md:mb-10'>Choose Your Next Drive</h1>
 
-            <div className='flex flex-col md:flex-row items-start gap-2 md:gap-4 '>
+            <div className='flex flex-col md:flex-row items-start gap-2 md:gap-8 '>
                 <SearchFieldInput></SearchFieldInput>
                 <Filter allCars={allCars}></Filter>
             </div>

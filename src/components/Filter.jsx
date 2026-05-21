@@ -31,7 +31,7 @@ export function Filter({ allCars }) {
                 value={selectedKey}
                 onChange={handleChange}
             >
-                <Label>State</Label>
+                <Label>Filter by Car type</Label>
                 <Autocomplete.Trigger>
                     <Autocomplete.Value />
                     <Autocomplete.ClearButton />

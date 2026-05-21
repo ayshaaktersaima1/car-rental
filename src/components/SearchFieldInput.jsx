@@ -24,12 +24,12 @@ const SearchFieldInput = () => {
     }
     return (
         <div className="flex items-center mb-6 w-full">
-            <div>
+            <div className="flex-1 min-w-0">
                 <SearchField name="search">
                     <Label>Search</Label>
                     <SearchField.Group className={'bg-[#f2f2f2] mb-6 rounded-tr-none rounded-br-none'}>
                         <SearchField.SearchIcon />
-                        <SearchField.Input placeholder=" Search by Car Name" value={search}
+                        <SearchField.Input className="w-full" placeholder=" Search by Car Name" value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
                         <SearchField.ClearButton onClick={handleClear} />
