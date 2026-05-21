@@ -23,7 +23,7 @@ const SearchFieldInput = () => {
         router.push(`/all-cars`);
     }
     return (
-        <div className="flex items-center mb-6 w-full">
+        <div className="flex items-center w-full">
             <div className="flex-1 min-w-0">
                 <SearchField name="search">
                     <Label>Search</Label>

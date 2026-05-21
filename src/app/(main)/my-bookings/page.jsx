@@ -29,7 +29,7 @@ const MyBookings = async () => {
 
     return (
         <div className='bg-[#f2f2f2]'>
-            <div className="pt-20 pb-11 md:pt-40 md:pb-22 w-[90%] mx-auto">
+            <div className="pt-6 pb-11 md:pt-40 md:pb-22 w-[90%] mx-auto">
                 <h1 className='text-center text-3xl md:text-5xl mb-7 md:mb-10 font-semibold'>My Bookings</h1>
 
 

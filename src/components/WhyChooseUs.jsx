@@ -11,7 +11,7 @@ import React from 'react';
 const WhyChooseUs = () => {
     return (
         <div>
-            <div className="pb-20 pt-10 px-5 overflow-hidden">
+            <div className="pb-20 pt-5 md:pt-10 px-5 overflow-hidden">
                 <div className="w-[90%] mx-auto">
                     <div className="text-center max-w-3xl mx-auto">
 

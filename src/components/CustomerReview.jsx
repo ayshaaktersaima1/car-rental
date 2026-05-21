@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 const CustomerReviewSection = () => {
     return (
-        <section className="w-[90%] mx-auto pb-20 pt-10">
+        <section className="w-[90%] mx-auto pb-15 md:pb-20">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-5xl font-bold">
                     What Our Customers Say

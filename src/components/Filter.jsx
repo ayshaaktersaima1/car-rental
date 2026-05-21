@@ -23,7 +23,7 @@ export function Filter({ allCars }) {
     }
 
     return (
-        <div className="mb-6">
+        <div>
             <Autocomplete
                 className="w-[256px]"
                 placeholder="Select one"

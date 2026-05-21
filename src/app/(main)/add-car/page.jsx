@@ -49,7 +49,7 @@ export default function AddCar() {
     return (
         <div>
 
-            <div className="mt-20 mb-11 md:mt-40 md:mb-22 w-[90%] mx-auto">
+            <div className="mt-26 mb-11 md:mt-40 md:mb-22 w-[90%] mx-auto">
                 <h1 className='text-center text-3xl md:text-5xl mb-7 md:mb-10 font-semibold'>Add Car</h1>
                 <Form onSubmit={onSubmit} className="flex w-full rounded-3xl shadow-md flex-col gap-4 bg-[#f2f2f2] p-10">
 
