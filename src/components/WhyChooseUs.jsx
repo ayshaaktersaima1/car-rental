@@ -19,7 +19,7 @@ const WhyChooseUs = () => {
                             Why DriveFleet Stands Out
                         </h2>
 
-                        <p className="text-gray-600 mt-3 leading-8 text-base md:text-lg">
+                        <p className="text-gray-600 mt-3 leading-relaxed md:leading-8 text-base md:text-lg">
                             DriveFleet provides reliable, stylish, and comfortable vehicles
                             with flexible rental solutions for business trips, vacations,
                             airport transfers, and daily travel needs.

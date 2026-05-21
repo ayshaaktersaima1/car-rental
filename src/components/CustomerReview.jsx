@@ -9,7 +9,7 @@ const CustomerReviewSection = () => {
                 <h2 className="text-3xl md:text-5xl font-semibold">
                     What Our Customers Say
                 </h2>
-                <p className="text-gray-600 mt-3 leading-8 text-base md:text-lg">
+                <p className="text-gray-600 mt-3 leading-relaxed md:leading-8 text-base md:text-lg">
                     Trusted by hundreds of happy renters across the city.
                 </p>
             </div>
