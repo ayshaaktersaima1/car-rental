@@ -36,7 +36,7 @@ const AllCars = async ({ searchParams }) => {
                         <h1 className="text-base md:text-lg">No car found!</h1>
                     </div>
                 </> : <>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-stretch'>
                         {
                             cars.map(car => <Card key={car._id} car={car}></Card>)
                         }

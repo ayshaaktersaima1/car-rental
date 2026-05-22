@@ -24,7 +24,7 @@ const Card = ({ car }) => {
 
     return (
         <div>
-            <div className='overflow-hidden rounded-2xl shadow-md hover:-translate-y-3 transition duration-300'>
+            <div className='h-full bg-[#f2f2f2] flex flex-col flex-1 overflow-hidden rounded-2xl shadow-md hover:-translate-y-3 transition duration-300'>
                 <div className='relative w-full aspect-[4/3]'>
                     {
                         isValid ? <> <Image src={image} alt='car photo' fill className='object-cover object-center'></Image></> :
@@ -34,7 +34,7 @@ const Card = ({ car }) => {
                     }
 
                 </div>
-                <div className='bg-[#f2f2f2] px-6 py-10 flex justify-between gap-4 items-center' >
+                <div className='px-6 py-10 flex justify-between gap-4 items-center' >
                     <div>
                         <h1 className='text-lg md:text-xl font-bold  line-clamp-1 capitalize'>{carName}</h1>
                         <p className='mb-2 capitalize text-gray-600'>({carType})</p>
